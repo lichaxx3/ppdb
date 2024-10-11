@@ -21,11 +21,11 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0 text-color">Dashboard</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="text-color">Home</a></li>
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->
@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-info">
+                            <div class="small-box">
                                 <div class="inner">
                                     <h3><?= $user_countsbelum ?></h3>
                                     <p>Jumlah Calon Siswa Lulus Tes Belum Mengisi Formulir</p>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-lg-6 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-info">
+                            <div class="small-box">
                                 <div class="inner">
                                     <h3><?= $user_counts ?></h3>
                                     <p>Jumlah Calon Siswa Lulus Tes Telah Di Konfirmasi</p>

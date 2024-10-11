@@ -43,28 +43,6 @@
                             <!-- small box -->
                             <div class="small-box">
                                 <div class="inner">
-                                    <h3 ><?= $user_countsbelum ?></h3>
-                                    <p>Siswa belum mengisi formulir</p>
-                                </div>
-                                <a href="/admin_utama/data_request" class="text-color small-box-footer">Selengkapnya <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-4">
-                            <!-- small box -->
-                            <div class="small-box">
-                                <div class="inner">
-                                    <h3><?= $user_counts ?></h3>
-                                    <p>siswa telah dikonfirmasi</p>
-                                </div>
-                                <a href="/admin_utama/data_siswa" class="small-box-footer">Selengkapnya <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-4">
-                            <!-- small box -->
-                            <div class="small-box">
-                                <div class="inner">
                                     <h3><?= $panitia_counts ?></h3>
                                     <p>Jumlah Akun Tata Usaha</p>
                                 </div>

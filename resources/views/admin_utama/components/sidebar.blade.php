@@ -12,7 +12,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image ">
-        <img src="{{ asset('dist/img/user2-160x160.png') }}" class="img-circle elevation-2" alt="User Image">
+        <img src="{{ asset('dist/img/jett.jpg') }}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info ">
         <a href="#" class="d-block text-color">{{ session()->get('username') }}</a>
@@ -36,27 +36,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/admin_utama/data_request" class="nav-link">
-            <i class="nav-icon fas fa-user "></i>
-            <p class="">Data Siswa Lulus Tes</p>
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="/admin_utama/data_pendaftar" class="nav-link">
             <i class="nav-icon fas fa-user "></i>
             <p class="">Data Akun Siswa</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/admin_utama/data_siswa" class="nav-link">
-            <i class="nav-icon fas fa-user "></i>
-            <p class="">Data Formulir Siswa</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/admin_utama/halaman-report" class="nav-link">
-            <i class="nav-icon fas fa-file "></i>
-            <p class="">Report Data Siswa</p>
           </a>
         </li>
         <li class="nav-item">
