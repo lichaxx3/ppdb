@@ -43,20 +43,6 @@
                             <!-- small box -->
                             <div class="small-box">
                                 <div class="inner">
-                                    <h3><?= $user_countsbelum ?></h3>
-                                    <p>Jumlah Calon Siswa Lulus Tes Belum Mengisi Formulir</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <a href="/admin/data_request" class="  small-box-footer">Selengkapnya <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-6">
-                            <!-- small box -->
-                            <div class="small-box">
-                                <div class="inner">
                                     <h3><?= $user_counts ?></h3>
                                     <p>Jumlah Calon Siswa Lulus Tes Telah Di Konfirmasi</p>
                                 </div>

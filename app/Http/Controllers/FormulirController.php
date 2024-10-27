@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\File;
 
 class FormulirController extends Controller
 {
+
+
   public function form_edit(Request $request){
     $user_siswa=User::where('id','=',session()->get('id'))->join('user_detail', 'user.id', '=', 'user_detail.id_user_detail')->first();
     return view('siswa.formulir_edit', compact('user_siswa'));

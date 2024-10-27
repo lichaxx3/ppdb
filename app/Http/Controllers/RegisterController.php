@@ -42,8 +42,8 @@ class RegisterController extends Controller
 
         // Hash password
         $validatedData['password'] = Hash::make($validatedData['password']);
-        $validatedData['id_user_level'] = 2; // Misalnya 2 untuk pengguna biasa
-        $validatedData['is_active'] = 1; // Misalnya aktif
+        $validatedData['id_user_level'] = 2; // 2 untuk pengguna biasa
+        $validatedData['is_active'] = 1; // aktif
 
         // Simpan ke database
         User::create($validatedData);
