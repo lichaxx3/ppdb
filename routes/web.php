@@ -27,6 +27,7 @@ Route::get('/register_web', [RegisterController::class, 'register_view'])->name(
 Route::post('/register_proses', [RegisterController::class, 'store_user'])->name('register.process');
 
 
+
 Route::get('/login_web', [LoginController::class, 'login_view'])->name('login_web');
 Route::post('/login_proses', [LoginController::class, 'login_proses']);
 Route::get('/log_out', [LoginController::class, 'log_out'])->name('log_out');
@@ -87,8 +88,12 @@ Route::get('/admin_utama/filter-report', [DataSiswaController::class, 'filter_re
 Route::get('/admin_utama/filter-report/export', [DataSiswaController::class, 'export_filter_report']);
 
 Route::get('/siswa', [DashboardController::class, 'dashboard_siswa'])->name('siswa');
-Route::get('/siswa/formulir', [FormulirController::class, 'formulir_pendaftaran'])->name('formulir_pendaftaran');
+// Route::get('/siswa/formulir', [FormulirController::class, 'formulir_pendaftaran'])->name('formulir_pendaftaran');
 Route::get('/siswa/formulir/edit/{id}', [FormulirController::class, 'form_edit'])->name('form_edit');
+
+
+// formulir
+Route::get('/siswa/formulir', [FormulirController::class, 'formulir_view'])->name('formulir.view');
 
 Route::post('/formulir_proses', [FormulirController::class, 'formulir_proses']);
 Route::post('/form_edit_proses', [FormulirController::class, 'form_edit_proses']);

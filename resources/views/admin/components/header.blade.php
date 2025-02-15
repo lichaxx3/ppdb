@@ -32,5 +32,5 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
     <!-- style css -->
-    <link rel="stylesheet" href="{{ asset('admin_sidebar/admin_utama.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_sidebar/admin_biasa.css') }}">
 </head>

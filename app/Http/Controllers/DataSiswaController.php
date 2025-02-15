@@ -218,7 +218,6 @@ class DataSiswaController extends Controller
   {
     $id = $request->id;
     $ijazah = $request->ijazah;
-    $skhun = $request->skhun;
     $kk = $request->kk;
     $akta_kelahiran = $request->akta_kelahiran;
     $foto = $request->foto;
@@ -229,7 +228,6 @@ class DataSiswaController extends Controller
     try {
       if (File::exists(public_path('storage/ijazah/' . $ijazah))) {
         File::delete(public_path('storage/ijazah/' . $ijazah));
-        File::delete(public_path('storage/skhun/' . $skhun));
         File::delete(public_path('storage/kk/' . $kk));
         File::delete(public_path('storage/akta_kelahiran/' . $akta_kelahiran));
         File::delete(public_path('storage/foto/' . $foto));
@@ -261,7 +259,6 @@ class DataSiswaController extends Controller
   {
     $id = $request->id;
     $ijazah = $request->ijazah;
-    $skhun = $request->skhun;
     $kk = $request->kk;
     $akta_kelahiran = $request->akta_kelahiran;
     $foto = $request->foto;
@@ -272,7 +269,6 @@ class DataSiswaController extends Controller
     try {
       if (File::exists(public_path('storage/ijazah/' . $ijazah))) {
         File::delete(public_path('storage/ijazah/' . $ijazah));
-        File::delete(public_path('storage/skhun/' . $skhun));
         File::delete(public_path('storage/kk/' . $kk));
         File::delete(public_path('storage/akta_kelahiran/' . $akta_kelahiran));
         File::delete(public_path('storage/foto/' . $foto));

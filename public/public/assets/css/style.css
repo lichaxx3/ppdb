@@ -5,15 +5,14 @@ body {
 }
 
 :root {
-    --primary-text:  rgb(255, 179, 0);   
+    --primary-text:  rgb(255, 179, 0);  
+    --primary-background: #131349; 
 }
 a {
-    color: #3498db;
     text-decoration: none;
 }
 
 a:hover {
-    color: #5faee3;
     text-decoration: none;
 }
 
@@ -27,6 +26,7 @@ h6 {
 }
 
 
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -38,27 +38,58 @@ h6 {
     right: 15px;
     bottom: 15px;
     z-index: 996;
-    background: #3498db;
     width: 40px;
     height: 40px;
     border-radius: 4px;
     transition: all 0.4s;
+    border: 1px solid var(--primary-text);
 }
 
 .back-to-top i {
     font-size: 28px;
-    color: #fff;
+    color: var(--primary-text);
     line-height: 0;
 }
 
 .back-to-top:hover {
-    background: #57aae1;
-    color: #fff;
+    color: var(--primary-text);
+    background-color: var(--primary-text);
+    box-shadow: 0px 0px 10px 0px var(--primary-text);
+    
 }
 
 .back-to-top.active {
     visibility: visible;
     opacity: 1;
+}
+
+
+
+/* button login */
+.login-daftar button{
+    width: 80px;
+    height: 35px;
+    outline: none;
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text);
+    background-color: transparent;
+    border-radius: 12px;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.login-daftar button:hover{
+    background-color: var(--primary-text);
+    box-shadow: 0px 0px 10px 0px var(--primary-text);
+}
+
+.login-daftar button .btn{
+    color: var(--primary-text);
+    font-size: 12px;
+}
+
+.login-daftar button .btn:hover{
+    color: #fff;
 }
 
 
@@ -72,7 +103,6 @@ h6 {
     }
 }
 
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -80,8 +110,9 @@ h6 {
 #header {
     z-index: 997;
     transition: all 0.5s;
-    padding: 22px 0;
-    background: #fff;
+    /* padding: 22px 0; */
+    background: var(--primary-background);
+    border-bottom: 1px solid var(--primary-text);
 }
 
 #header.header-scrolled {
@@ -100,7 +131,8 @@ h6 {
     img{
     width: 40px;
     height: 40px;
-    margin-bottom: 10px;        
+    margin-bottom: 10px;
+    margin-top: 4px;        
     }
 
     a{
@@ -110,7 +142,6 @@ h6 {
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-    color: #222222;
     text-decoration: none;
 }
 
@@ -221,7 +252,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-    color: #3498db;
+    color: var(--primary-text);
 }
 
 .navbar .dropdown:hover>ul {
@@ -258,12 +289,13 @@ h6 {
 */
 
 .mobile-nav-toggle {
-    color: #222222;
+    color: var(--primary-text);
     font-size: 28px;
     cursor: pointer;
     display: none;
     line-height: 0;
     transition: 0.5s;
+    font-weight: bold;
 }
 
 .mobile-nav-toggle.bi-x {
@@ -275,6 +307,12 @@ h6 {
         display: block;
     }
     .navbar ul {
+        display: none;
+    }
+    .login-daftar button{
+        display: none;
+    }
+    .login-daftar button a{
         display: none;
     }
 }
@@ -370,8 +408,12 @@ h6 {
 
 #hero {
     width: 100%;
-    height: 70vh;
-    margin-top: 70px;
+    height: 80vh;
+    margin-top: 50px;
+}
+
+.hero{
+    background-color: var(--primary-background);
 }
 
 #hero h1 {
@@ -411,7 +453,14 @@ h6 {
     width: 100%;
     height: 300px;
     background-size: cover;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
+    border-radius: 12px; 
+    transition: all .5s;   
+    cursor: pointer;
+}
+
+#hero img:hover{
+    box-shadow: 0px 0px 20px 0px var(--primary-text);
 }
 
 @media (min-width: 1024px) {
@@ -528,6 +577,285 @@ section {
 
 
 /*--------------------------------------------------------------
+# guru
+--------------------------------------------------------------*/
+
+#guru{
+    background-color: var(--primary-background);
+    width: 100%;
+    height: 130vh;
+}
+.container-guru {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--primary-background);
+}
+
+/* Card */
+.card {
+    background-color: var(--primary-background);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    cursor: pointer;
+    border: 1px solid var(--primary-text);
+    transition: all .3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px 0px  var(--primary-text);
+}
+
+.card:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--primary-text);
+    margin-bottom: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .card {
+        width: calc(33.33% - 20px); /* 3 card per baris di layar lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 card per baris di tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px); /* 1 card per baris di ponsel */
+    }
+}
+
+.lihat{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+    a{
+        color: var(--primary-text);
+        border-bottom: 1px solid var(--primary-text);
+    }
+}
+
+/*--------------------------------------------------------------
+# end guru
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# jurusan
+--------------------------------------------------------------*/
+
+#jurusan{
+    background-color: var(--primary-background);
+    width: 100%;
+    height: 80vh;
+}
+.container-jurusan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--primary-background);
+}
+
+/* Card */
+.card {
+    background-color: var(--primary-background);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    cursor: pointer;
+    border: 1px solid var(--primary-text);
+    transition: all .3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px 0px  var(--primary-text);
+}
+
+.card:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--primary-text);
+    margin-bottom: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .card {
+        width: calc(33.33% - 20px); /* 3 card per baris di layar lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 card per baris di tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px); /* 1 card per baris di ponsel */
+    }
+}
+
+.lihat{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+    a{
+        color: var(--primary-text);
+        border-bottom: 1px solid var(--primary-text);
+    }
+}
+
+/*--------------------------------------------------------------
+# end jurusan
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# eskul
+--------------------------------------------------------------*/
+
+#eskul{
+    background-color: var(--primary-background);
+    width: 100%;
+    height: 80vh;
+}
+.container-eskul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--primary-background);
+}
+
+/* Card */
+.card {
+    background-color: var(--primary-background);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    cursor: pointer;
+    border: 1px solid var(--primary-text);
+    transition: all .3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px 0px  var(--primary-text);
+}
+
+.card:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--primary-text);
+    margin-bottom: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .card {
+        width: calc(33.33% - 20px); /* 3 card per baris di layar lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 card per baris di tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px); /* 1 card per baris di ponsel */
+    }
+}
+
+.lihat{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+    a{
+        color: var(--primary-text);
+        border-bottom: 1px solid var(--primary-text);
+    }
+}
+
+/*--------------------------------------------------------------
+# end eskul
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
 
@@ -572,6 +900,9 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+.about{
+    background-color: var(--primary-background);
+}
 
 .about h2::before {
     background: var(--primary-text);
@@ -643,6 +974,7 @@ section {
 
 .counts {
     padding-top: 0;
+    background-color: var(--primary-background);
 }
 
 .counts .content {
@@ -1438,6 +1770,10 @@ section {
 # Contact
 --------------------------------------------------------------*/
 
+.contact{
+    background-color: var(--primary-background);
+}
+
 .contact .container .section-title h2::before{
     background: var(--primary-text);
 }
@@ -1662,11 +1998,12 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-    background: #fff;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
     padding: 30px 0;
     color: #222222;
     font-size: 14px;
+    background: #131349;
+    border-top: 1px solid var(--primary-text);
 }
 
 #footer .credits {

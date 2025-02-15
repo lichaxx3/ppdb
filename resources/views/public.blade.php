@@ -27,7 +27,7 @@
     <link href="{{ asset('public/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('public/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
+    <!--Main CSS File -->
     <link href="{{ asset('public/assets/css/style.css') }}" rel="stylesheet">
 
 </head>
@@ -35,39 +35,43 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center bg-dark">
+    <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
                 <h1><img src="{{ asset('public/assets/img/favicon.png') }}" alt="#"><a href="#hero" class="text-warning">SMK GOLDEN</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active text-warning" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#more-services">Ekskul</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="/login_web">Login</a></li>
+                    <li><a class="nav-link scrollto active" href="#hero">Rumah</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+                    <li><a class="nav-link scrollto" href="#guru">Guru</a></li>
+                    <li><a class="nav-link scrollto" href="#jurusan">Jurusan</a></li>
+                    <li><a class="nav-link scrollto" href="#eskul">Eskul</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
+            <div class="login-daftar">
+                <button><a class="btn" href="/login_web">Masuk</a></button>
+                <button><a class="btn" href="/register_web">daftar</a></button>
+            </div>
 
         </div>
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center bg-dark">
+    <section id="hero" class="d-flex align-items-center hero">
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up " class="text-warning">Selamat datang di SMK Golden: Mewujudkan generasi cerdas dan berkarakter melalui pendidikan berkualitas.</h1>
+                    <h1 data-aos="fade-up " class="text-warning">Mewujudkan generasi cerdas dan berkarakter melalui pendidikan berkualitas.</h1>
                     <h2 data-aos="fade-up" data-aos-delay="400" class="text-white">Selamat Datang !</h2>
                     <div data-aos="fade-up" data-aos-delay="800">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                        <a href="#about" class="btn-get-started scrollto">Lihat!!!</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -76,9 +80,9 @@
             </div>
         </div>
 
-    </section><!-- End Hero -->
+    </section>
 
-    <main id="main" class="bg-dark">
+    <main id="main" class="main">
 
         <!-- ======= About Us Section ======= -->
         <section id="about" class="about">
@@ -106,6 +110,8 @@
 
             </div>
         </section><!-- End About Us Section -->
+
+        
 
         <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
@@ -168,7 +174,175 @@
             </div>
         </section><!-- End Counts Section -->
 
+        {{-- guru --}}
+        <section id="guru" class="guru">
 
+            <div class="section-title" data-aos="fade-up">
+                <h2 class="text-warning">guru</h2>
+            </div>
+            <div class="container-guru">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama guru</h2>
+                </div>
+            </div>
+            
+
+        </div>
+        <label class="lihat"><a href="#">Lihat lebih banyak!!!</a></label>
+    </section>
+        {{-- end guru --}}
+
+        {{-- jurusan --}}
+        <section id="jurusan" class="jurusan">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2 class="text-warning">jurusan</h2>
+            </div>
+            <div class="container-guru">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">tkj</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">mplb</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">HTL</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">pm</h2>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+        {{-- end jurusan --}}
+        {{-- eskul --}}
+        <section id="eskul" class="eskul">
+
+            <div class="section-title" data-aos="fade-up">
+                <h2 class="text-warning">eskul</h2>
+            </div>
+            <div class="container-guru">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama eskul</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama eskul</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">HTL</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX85rcAp8PuwE8xRCgVpuDn9AksfRGxlwJRA&s" alt="Card Image">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">nama eskul</h2>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+        {{-- end eskul --}}
 
         <!-- ======= More Services Section ======= -->
         <!-- <section id="more-services" class="more-services">
@@ -256,7 +430,7 @@
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2 class="text-warning">Contact Us</h2>
+                    <h2 class="text-warning">Kontak</h2>
                 </div>
 
                 <div class="row">
@@ -321,7 +495,7 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="bg-dark">
+    <footer id="footer">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-lg-6 text-lg-left text-center">
@@ -329,19 +503,11 @@
                         <label class="text-warning">&copy; Copyright <strong>Imam Dermawan</strong></lebel>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-                        <a href="#intro" class="scrollto">Home</a>
-                        <a href="#about" class="scrollto">About</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                    </nav>
-                </div>
             </div>
         </div>
     </footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center bg-warning"><i
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short text-light"></i></a>
 
     <!-- Vendor JS Files -->
@@ -353,7 +519,6 @@
     <script src="{{ asset('public/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('public/assets/vendor/php-email-form/validate.js') }}"></script>
 
-    <!-- Template Main JS File -->
     <script src="{{ asset('public/assets/js/main.js') }}"></script>
 
 </body>

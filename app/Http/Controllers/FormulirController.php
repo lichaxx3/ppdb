@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\File;
 class FormulirController extends Controller
 {
 
+  public function formulir_view()
+  {
+      return view('siswa.formulir');
+    
+  }
 
   public function form_edit(Request $request){
     $user_siswa=User::where('id','=',session()->get('id'))->join('user_detail', 'user.id', '=', 'user_detail.id_user_detail')->first();
@@ -20,7 +25,6 @@ class FormulirController extends Controller
   public function form_edit_proses(Request $request){
     $validator = Validator::make($request->all(), [
       'ijazah' => "required",
-      'skhun' => "required",
       'kk' => "required",
       'akta_kelahiran' => "required",
       'foto' => "required",
@@ -58,15 +62,7 @@ class FormulirController extends Controller
     $kode_pos = $request->kode_pos;
     $id = $request->id_user_detail;
     $jalur_pendaftaran = $request->jalur_pendaftaran;
-    $nilai_ipa = $request->nilai_ipa;
-    $nilai_ips = $request->nilai_ips;
-    $nilai_matematika = $request->nilai_matematika;
-    $nilai_bahasa_inggris = $request->nilai_bahasa_inggris;
-    $nilai_bahasa_indonesia = $request->nilai_bahasa_indonesia;
-    $id_baju_batik = $request->id_baju_batik;
-    $id_baju_olahraga = $request->id_baju_olahraga;
     $ijazah_old = $request->ijazah_old;
-    $skhun_old = $request->skhun_old;
     $kk_old = $request->kk_old;
     $akta_kelahiran_old = $request->akta_kelahiran_old;
     $foto_old = $request->foto_old;
@@ -99,10 +95,6 @@ class FormulirController extends Controller
 
     $path_ijazah = $request->file('ijazah')->store('public/ijazah');
 
-    $name_skhun = $request->file('skhun')->getClientOriginalName();
-
-    $path_skhun = $request->file('skhun')->store('public/skhun');
-
     $name_kk = $request->file('kk')->getClientOriginalName();
 
     $path_kk = $request->file('kk')->store('public/kk');
@@ -120,7 +112,6 @@ class FormulirController extends Controller
     $path_surat_keterangan_lulus = $request->file('surat_keterangan_lulus')->store('public/surat_keterangan_lulus');
 
     $file_name_ijazah = str_replace("public/ijazah/", "", $path_ijazah);
-    $file_name_skhun = str_replace("public/skhun/", "", $path_skhun);
     $file_name_kk = str_replace("public/kk/", "", $path_kk);
     $file_name_akta_kelahiran = str_replace("public/akta_kelahiran/", "", $path_akta_kelahiran);
     $file_name_foto = str_replace("public/foto/", "", $path_foto);
@@ -151,20 +142,12 @@ class FormulirController extends Controller
           'provinsi' => $provinsi,
           'kode_pos' => $kode_pos,
           'ijazah' => $file_name_ijazah,
-          'skhun' => $file_name_skhun,
           'kk' => $file_name_kk,
           'akta_kelahiran' => $file_name_akta_kelahiran,
           'foto' => $file_name_foto,
           'surat_keterangan_lulus' => $file_name_surat_keterangan_lulus,
           'id_status_terdaftar' => '2',
           'jalur_pendaftaran' => $jalur_pendaftaran,
-          'nilai_ipa' => $nilai_ipa,
-          'nilai_ips' => $nilai_ips,
-          'nilai_matematika' => $nilai_matematika,
-          'nilai_bahasa_inggris' => $nilai_bahasa_inggris,
-          'nilai_bahasa_indonesia' => $nilai_bahasa_indonesia,
-          'id_baju_batik' => $id_baju_batik,
-          'id_baju_olahraga' => $id_baju_olahraga,
           'nama_ayah' => $nama_ayah,
           'tempat_lahir_ayah' => $tempat_lahir_ayah,
           'tanggal_lahir_ayah' => $tanggal_lahir_ayah,
@@ -216,40 +199,45 @@ class FormulirController extends Controller
     }
 
   }
-  public function formulir_pendaftaran()
+
+  public function formulir_pendaftaran(Request $request)
   {
 
-    if (session()->get('loggin') == true) {
-      $user_siswa=User::where('id','=',session()->get('id'))->join('user_detail', 'user_detail.id_user_detail', '=', 'user.id')->first();
-      return view('siswa.formulir', compact('user_siswa'));
-    } else {
-      return redirect()
-        ->route('login_web')
-        ->with([
-          'error' => 'Sesi Anda berakhir !'
-        ]);
-    }
+    // if (session()->get('loggin') == true) {
+    //   $id = session()->get('id');
+    //   $user_siswa=User::where('id',$id)->first();
+    //   // dd($user_siswa->username);
+    //   // return view('siswa.formulir', compact('user_siswa'));
+    //   return view('siswa.formulir');
+    // } else {
+    //   return redirect()
+    //     ->route('login_web')
+    //     ->with([
+    //       'error' => 'Sesi Anda berakhir !'
+    //     ]);
+    // }
   }
+
   public function formulir_proses(Request $request)
   {
 
-    $validator = Validator::make($request->all(), [
-      'ijazah' => "required",
-      'skhun' => "required",
-      'kk' => "required",
-      'akta_kelahiran' => "required",
-      'foto' => "required",
-      'surat_keterangan_lulus' => "required"
-    ]);
+    // $validator = Validator::make($request->all(), [
+    //   'ijazah' => "required",
+    //   'skhun' => "required",
+    //   'kk' => "required",
+    //   'akta_kelahiran' => "required",
+    //   'foto' => "required",
+    //   'surat_keterangan_lulus' => "required"
+    // ]);
 
-    if ($validator->fails()) {
-      return redirect()
-        ->back()
-        ->withInput()
-        ->with([
-          'error' => 'Error, Data Tidak Terupload !'
-        ]);
-    }
+    // if ($validator->fails()) {
+    //   return redirect()
+    //     ->back()
+    //     ->withInput()
+    //     ->with([
+    //       'error' => 'Error, Data Tidak Terupload !'
+    //     ]);
+    // }
 
 
 
@@ -274,17 +262,9 @@ class FormulirController extends Controller
     $kabupaten = $request->kabupaten;
     $provinsi = $request->provinsi;
     $kode_pos = $request->kode_pos;
-    $id = $request->id;
+    $id = session()->get('id');
     $jalur_pendaftaran = $request->jalur_pendaftaran;
-    $nilai_ipa = $request->nilai_ipa;
-    $nilai_ips = $request->nilai_ips;
-    $nilai_matematika = $request->nilai_matematika;
-    $nilai_bahasa_inggris = $request->nilai_bahasa_inggris;
-    $nilai_bahasa_indonesia = $request->nilai_bahasa_indonesia;
-    $id_baju_batik = $request->id_baju_batik;
-    $id_baju_olahraga = $request->id_baju_olahraga;
     $ijazah_old = $request->ijazah_old;
-    $skhun_old = $request->skhun_old;
     $kk_old = $request->kk_old;
     $akta_kelahiran_old = $request->akta_kelahiran_old;
     $foto_old = $request->foto_old;
@@ -310,35 +290,35 @@ class FormulirController extends Controller
     $pendapatan_ibu = $request->pendapatan_ibu;
 
 
+    // $name_ijazah = $request->file('ijazah')->getClientOriginalName();
 
+    if ($request->hasFile('ijazah')) {
+      $path_ijazah = $request->file('ijazah')->store('public/ijazah');
+    }
 
+    // $name_kk = $request->file('kk')->getClientOriginalName();
 
-    $name_ijazah = $request->file('ijazah')->getClientOriginalName();
+    if ($request->hasFile('kk')) {
+      $path_kk = $request->file('kk')->store('public/kk');
+    }
+    // $name_akta_kelahiran = $request->file('akta_kelahiran')->getClientOriginalName();
 
-    $path_ijazah = $request->file('ijazah')->store('public/ijazah');
+    if ($request->hasFile('akta_kelahiran')) {
+      $path_akta_kelahiran = $request->file('akta_kelahiran')->store('public/akta_kelahiran');
+    }
+    // $name_foto = $request->file('foto')->getClientOriginalName();
 
-    $name_skhun = $request->file('skhun')->getClientOriginalName();
+    if($request->hasFile('foto')){
+      $path_foto = $request->file('foto')->store('public/foto');
+    }
 
-    $path_skhun = $request->file('skhun')->store('public/skhun');
+    // $name_surat_keterangan_lulus = $request->file('surat_keterangan_lulus')->getClientOriginalName();
 
-    $name_kk = $request->file('kk')->getClientOriginalName();
-
-    $path_kk = $request->file('kk')->store('public/kk');
-
-    $name_akta_kelahiran = $request->file('akta_kelahiran')->getClientOriginalName();
-
-    $path_akta_kelahiran = $request->file('akta_kelahiran')->store('public/akta_kelahiran');
-
-    $name_foto = $request->file('foto')->getClientOriginalName();
-
-    $path_foto = $request->file('foto')->store('public/foto');
-
-    $name_surat_keterangan_lulus = $request->file('surat_keterangan_lulus')->getClientOriginalName();
-
-    $path_surat_keterangan_lulus = $request->file('surat_keterangan_lulus')->store('public/surat_keterangan_lulus');
+    if($request->hasFile('surat_keterangan_lulus')) {
+      $path_surat_keterangan_lulus = $request->file('surat_keterangan_lulus')->store('public/surat_keterangan_lulus');
+    }
 
     $file_name_ijazah = str_replace("public/ijazah/", "", $path_ijazah);
-    $file_name_skhun = str_replace("public/skhun/", "", $path_skhun);
     $file_name_kk = str_replace("public/kk/", "", $path_kk);
     $file_name_akta_kelahiran = str_replace("public/akta_kelahiran/", "", $path_akta_kelahiran);
     $file_name_foto = str_replace("public/foto/", "", $path_foto);
@@ -349,9 +329,7 @@ class FormulirController extends Controller
 
     try {
 
-      $affected = DB::table('user_detail')
-        ->where('id_user_detail', $id)
-        ->update([
+      $valueForm = [
           'nama_lengkap' => $nama_lengkap,
           'nama_panggilan' => $nama_panggilan,
           'sekolah_asal' => $sekolah_asal,
@@ -373,20 +351,12 @@ class FormulirController extends Controller
           'provinsi' => $provinsi,
           'kode_pos' => $kode_pos,
           'ijazah' => $file_name_ijazah,
-          'skhun' => $file_name_skhun,
           'kk' => $file_name_kk,
           'akta_kelahiran' => $file_name_akta_kelahiran,
           'foto' => $file_name_foto,
           'surat_keterangan_lulus' => $file_name_surat_keterangan_lulus,
           'id_status_terdaftar' => '2',
           'jalur_pendaftaran' => $jalur_pendaftaran,
-          'nilai_ipa' => $nilai_ipa,
-          'nilai_ips' => $nilai_ips,
-          'nilai_matematika' => $nilai_matematika,
-          'nilai_bahasa_inggris' => $nilai_bahasa_inggris,
-          'nilai_bahasa_indonesia' => $nilai_bahasa_indonesia,
-          'id_baju_batik' => $id_baju_batik,
-          'id_baju_olahraga' => $id_baju_olahraga,
           'nama_ayah' => $nama_ayah,
           'tempat_lahir_ayah' => $tempat_lahir_ayah,
           'tanggal_lahir_ayah' => $tanggal_lahir_ayah,
@@ -405,29 +375,30 @@ class FormulirController extends Controller
           'warga_negara_ibu' => $warga_negara_ibu,
           'nomor_telepon_ibu' => $nomor_telepon_ibu,
           'pendapatan_ibu' => $pendapatan_ibu
-        ]);
+        ];
 
       $affected = DB::table('user')
         ->where('id', $id)
         ->update(['no_telp' => $no_telp]);
 
-      // if (File::exists(public_path('storage/ijazah/' . $ijazah_old))) {
-      //   File::delete(public_path('storage/ijazah/' . $ijazah_old));
-      //   File::delete(public_path('storage/skhun/' . $skhun_old));
-      //   File::delete(public_path('storage/kk/' . $kk_old));
-      //   File::delete(public_path('storage/akta_kelahiran/' . $akta_kelahiran_old));
-      //   File::delete(public_path('storage/foto/' . $foto_old));
-      //   File::delete(public_path('storage/surat_keterangan_lulus/' . $surat_keterangan_lulus_old));
-      // } else {
-      //   dd('File does not exists.');
-      // }
+      if (File::exists(public_path('storage/ijazah/' . $ijazah_old))) {
+        File::delete(public_path('storage/ijazah/' . $ijazah_old));
+        File::delete(public_path('storage/kk/' . $kk_old));
+        File::delete(public_path('storage/akta_kelahiran/' . $akta_kelahiran_old));
+        File::delete(public_path('storage/foto/' . $foto_old));
+        File::delete(public_path('storage/surat_keterangan_lulus/' . $surat_keterangan_lulus_old));
+      } else {
+        dd('File does not exists.');
+      }
 
-      return redirect()
-        ->back()
-        ->withInput()
-        ->with([
-          'success' => 'Sukses, Data Telah Di Upload !'
-        ]);
+      // return redirect()
+      //   ->back()
+      //   ->withInput()
+      //   ->with([
+      //     'success' => 'Sukses, Data Telah Di Upload !'
+      //   ]);
+
+      dd($valueForm);
     } catch (\Exception $e) {
       return redirect()
         ->back()

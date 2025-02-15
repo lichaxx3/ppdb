@@ -57,7 +57,7 @@
           <span class="login100-form-title-1">
             Sign In
             <br>
-            Website Pendaftaran Ulang SMK Golden
+            Website Pendaftaran SMK Golden
           </span>
         </div>
 

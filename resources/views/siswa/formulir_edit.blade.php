@@ -195,12 +195,6 @@
                                     <input type="text" name="ijazah_old" id="ijazah_old"
                                         value="{{ $user_siswa->ijazah }}" hidden>
                                     <div class="form-group">
-                                        <label for="skhun">SKHUN</label>
-                                        <input type="file" class="form-control" id="skhun" name="skhun" required value="{{ $user_siswa->skhun }}">
-                                    </div>
-                                    <input type="text" name="skhun_old" id="skhun_old"
-                                        value="{{ $user_siswa->skhun }}" hidden>
-                                    <div class="form-group">
                                         <label for="kk">Kartu Keluarga</label>
                                         <input type="file" class="form-control" id="kk" name="kk" required value="{{ $user_siswa->kk }}">
                                     </div>
@@ -225,55 +219,12 @@
                                     </div>
                                     <input type="text" name="surat_keterangan_lulus_old" id="surat_keterangan_lulus_old"
                                         value="{{ $user_siswa->surat_keterangan_lulus }}" hidden>
-                                    <div class="form-group">
-                                        <label for="nilai_ipa">Nilai IPA</label>
-                                        <input type="text" class="form-control" id="nilai_ipa" name="nilai_ipa" value="{{ $user_siswa->nilai_ipa }}"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nilai_ips">Nilai IPS</label>
-                                        <input type="text" class="form-control" id="nilai_ips" name="nilai_ips" value="{{ $user_siswa->nilai_ips }}"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nilai_matematika">Nilai Matematika</label>
-                                        <input type="text" class="form-control" id="nilai_matematika" value="{{ $user_siswa->nilai_matematika }}"
-                                            name="nilai_matematika" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nilai_bahasa_inggris">Nilai Bahasa Inggris</label>
-                                        <input type="text" class="form-control" id="nilai_bahasa_inggris"
-                                            name="nilai_bahasa_inggris" value="{{ $user_siswa->nilai_bahasa_inggris }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nilai_bahasa_indonesia">Nilai Bahasa Indonesia</label>
-                                        <input type="text" class="form-control" id="nilai_bahasa_indonesia" value="{{ $user_siswa->nilai_bahasa_indonesia }}"
-                                            name="nilai_bahasa_indonesia" required>
-                                    </div>
 
                                     <div class="form-group">
                                         <label for="jalur_pendaftaran">Jalur Pendaftaran : </label>
                                         <select name="jalur_pendaftaran" id="jalur_pendaftaran" class="form-control" value="{{ $user_siswa->jalur_pendaftaran }}">
                                             <option>Zonasi</option>
                                             <option>Prestasi</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jalur_pendaftaran">Pilih Ukuran Baju Batik : </label>
-                                        <select class="form-control" name="id_baju_batik" required value="{{ $user_siswa->id_baju_batik }}">
-                                            <option value="1">S - Rp 75.000</option>
-                                            <option value="2">M - Rp 80.000</option>
-                                            <option value="3">L - Rp 85.000</option>
-                                            <option value="1">XL - Rp 90.000</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jalur_pendaftaran">Pilih Ukuran Baju Olahraga : </label>
-                                        <select class="form-control" value="{{ $user_siswa->id_baju_olahraga }}" name="id_baju_olahraga" required>
-                                            <option value="1">S - Rp 135.000</option>
-                                            <option value="2">M - Rp 145.000</option>
-                                            <option value="3">L - Rp 155.000</option>
-                                            <option value="1">XL - Rp 165.000</option>
                                         </select>
                                     </div>
                                     <br>

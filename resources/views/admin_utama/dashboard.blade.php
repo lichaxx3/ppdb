@@ -25,7 +25,7 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item "><a href="#" class="text-color">Home</a></li>
+                                <li class="breadcrumb-item "><label class="text-color">Home</label></li>
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->

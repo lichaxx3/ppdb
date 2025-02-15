@@ -27,9 +27,13 @@ class RegisterController extends Controller
     return view('register_admin');
   }
 
-
   public function store_user(Request $request)
     {
+
+      $username = $request->username;
+      $password = $request->password;
+      $id = sha1($username . $password);
+
         // Validasi input
         $validatedData = $request->validate([
             'nisn' => 'required|min:5|max:25',
@@ -41,6 +45,9 @@ class RegisterController extends Controller
         ]);
 
         // Hash password
+        $validatedData['id'] = $id;
+        $validatedData['id_user_detail'] = $id;
+
         $validatedData['password'] = Hash::make($validatedData['password']);
         $validatedData['id_user_level'] = 2; // 2 untuk pengguna biasa
         $validatedData['is_active'] = 1; // aktif

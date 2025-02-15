@@ -510,3 +510,13 @@ input {
     padding-bottom: 40px;
   }
 }
+
+.tetep{
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--primary-text);
+  margin-bottom: 12px;
+  font-weight: bold;
+  display: flex;
+}

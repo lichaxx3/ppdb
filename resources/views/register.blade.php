@@ -56,12 +56,19 @@
         <div class="card-body">
           <h2 class="title">Daftar Akun</h2>
           <form method="POST" action="/register_proses">
+            <div class="tetep">
+              <label>Nomor_peserta:</label>
+                <input class="tetep" type="text" placeholder="iduserinc" name="iduserinc" value="{{ $newId }}" readonly require>
+                @error('iduserinc')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
             @csrf
             <div class="input-group">
                 <input class="input--style-1" type="number" placeholder="NISN" name="nisn" required>
                 @error('nisn')
                     <p class="text-danger">{{ $message }}</p>
-                @enderror
+                    @enderror
             </div>
             @csrf
             <div class="input-group">
@@ -88,12 +95,6 @@
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="input-group">
-                <input class="input--style-1" type="text" placeholder="iduserinc" name="iduserinc" value="{{ $newId }}" readonly require>
-                @error('iduserinc')
-                    <p class="text-danger">{{ $message }}</p>
-                @enderror
-            </div>
             <div class="p-t-20">
                 <button class="btn btn--radius" type="submit">Submit</button>
                 <a href="/login_web" class="btn btn--radius">Login Akun</a>
@@ -117,7 +118,7 @@
   {{-- Alert Close --}}
   <script src="{{ asset('dist/js/custom.js') }}"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 <!-- end document-->
